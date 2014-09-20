@@ -89,7 +89,6 @@
 		82EB529519C80DD60015ED9A /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EB529419C80DD60015ED9A /* white.png */; };
 		82EB529919C82EBE0015ED9A /* correctcolor.frag in Resources */ = {isa = PBXBuildFile; fileRef = 82EB529819C82EBE0015ED9A /* correctcolor.frag */; };
 		82EB529C19C843550015ED9A /* hole1.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EB529B19C843550015ED9A /* hole1.png */; };
-		82EB529E19C930740015ED9A /* Tank Nation in Resources */ = {isa = PBXBuildFile; fileRef = 82EB529D19C930740015ED9A /* Tank Nation */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -329,7 +328,6 @@
 		82EB529419C80DD60015ED9A /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		82EB529819C82EBE0015ED9A /* correctcolor.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = correctcolor.frag; sourceTree = "<group>"; };
 		82EB529B19C843550015ED9A /* hole1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole1.png; sourceTree = "<group>"; };
-		82EB529D19C930740015ED9A /* Tank Nation */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "Tank Nation"; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -538,7 +536,6 @@
 			isa = PBXGroup;
 			children = (
 				82CEE52B19CA87A400F67EA9 /* farm.png */,
-				82EB529D19C930740015ED9A /* Tank Nation */,
 				82EB529B19C843550015ED9A /* hole1.png */,
 				828544DD19C2DE9300DBE0E5 /* hole.png */,
 				82EB529419C80DD60015ED9A /* white.png */,
@@ -791,7 +788,6 @@
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
-				82EB529E19C930740015ED9A /* Tank Nation in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				828544DE19C2DE9300DBE0E5 /* hole.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
