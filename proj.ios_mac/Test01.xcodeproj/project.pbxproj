@@ -18,7 +18,6 @@
 		1AC6FB31180E99EB004C840B /* libcocos2dx-extensions iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB09180E9839004C840B /* libcocos2dx-extensions iOS.a */; };
 		1AC6FB32180E99EB004C840B /* libCocosDenshion iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB0F180E9839004C840B /* libCocosDenshion iOS.a */; };
 		1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */; };
-		1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */; };
 		1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B916D35E4900DB1158 /* CloseNormal.png */; };
 		1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */; };
 		1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */; };
@@ -36,7 +35,6 @@
 		5087E75417EB910900C73F5D /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */; };
 		5087E75517EB910900C73F5D /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */; };
 		5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */; };
-		5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */; };
 		5087E76317EB910900C73F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		5087E76517EB910900C73F5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		5087E76717EB910900C73F5D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -62,19 +60,18 @@
 		50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629517ECD46A001EB2F8 /* Icon-100.png */; };
 		50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A017ECD613001EB2F8 /* Icon-29.png */; };
 		50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A117ECD613001EB2F8 /* Icon-50.png */; };
-		821071B619BEDB080044C745 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 821071B419BEDB080044C745 /* Level.cpp */; };
 		821071BB19BEDB8A0044C745 /* desert.png in Resources */ = {isa = PBXBuildFile; fileRef = 821071B919BEDB8A0044C745 /* desert.png */; };
 		821071BC19BEDB8A0044C745 /* tank.png in Resources */ = {isa = PBXBuildFile; fileRef = 821071BA19BEDB8A0044C745 /* tank.png */; };
-		821071C019BEDF110044C745 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 821071BE19BEDF110044C745 /* GameScene.cpp */; };
 		821071C219BEE4360044C745 /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 821071C119BEE4360044C745 /* dot.png */; };
 		8218D52E19C2C1A200A9BF4D /* testshader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 8218D52C19C2C1A200A9BF4D /* testshader.frag */; };
 		8218D52F19C2C1A200A9BF4D /* testshader.vert in Resources */ = {isa = PBXBuildFile; fileRef = 8218D52D19C2C1A200A9BF4D /* testshader.vert */; };
 		8218D53719C2C86500A9BF4D /* CustomShaders.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8218D53519C2C86500A9BF4D /* CustomShaders.cpp */; };
-		82228EF619C03FE8008D68A4 /* TestLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82228EF419C03FE8008D68A4 /* TestLayer.cpp */; };
+		821B5A9A19CD7B88002F217A /* Global.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 821B5A9219CD7B88002F217A /* Global.cpp */; };
+		821B5A9B19CD7B88002F217A /* PhysicsEditorLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 821B5A9519CD7B88002F217A /* PhysicsEditorLoader.cpp */; };
+		821B5A9C19CD7B88002F217A /* TestLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 821B5A9819CD7B88002F217A /* TestLayer.cpp */; };
+		821B5A9F19CD7DCD002F217A /* GlobalFuncs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 821B5A9D19CD7DCD002F217A /* GlobalFuncs.cpp */; };
 		822C33BE19BF09E60031170D /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 822C33BD19BF09E60031170D /* mask.png */; };
-		8235B60F19C19A0800F30807 /* PhysicsEditorLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8235B60D19C19A0700F30807 /* PhysicsEditorLoader.cpp */; };
 		8235B61119C19ED300F30807 /* desert.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8235B61019C19ED300F30807 /* desert.plist */; };
-		8235B61C19C1AFE400F30807 /* Global.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8235B61A19C1AFE400F30807 /* Global.cpp */; };
 		8235B61E19C28F2F00F30807 /* tank.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8235B61D19C28F2F00F30807 /* tank.plist */; };
 		828544DE19C2DE9300DBE0E5 /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = 828544DD19C2DE9300DBE0E5 /* hole.png */; };
 		82C14C7319C1555000888BE3 /* clipper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82C14C6219C1555000888BE3 /* clipper.cpp */; };
@@ -246,8 +243,6 @@
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		1AFAF8B416D35DE700DB1158 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
-		1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = ../Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
-		1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = ../Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		1AFAF8B916D35E4900DB1158 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
@@ -287,25 +282,25 @@
 		50EF629517ECD46A001EB2F8 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
 		50EF62A017ECD613001EB2F8 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29.png"; sourceTree = "<group>"; };
 		50EF62A117ECD613001EB2F8 /* Icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-50.png"; sourceTree = "<group>"; };
-		821071B419BEDB080044C745 /* Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Level.cpp; path = ../Classes/Level.cpp; sourceTree = "<group>"; };
-		821071B519BEDB080044C745 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = ../Classes/Level.h; sourceTree = "<group>"; };
 		821071B919BEDB8A0044C745 /* desert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desert.png; sourceTree = "<group>"; };
 		821071BA19BEDB8A0044C745 /* tank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tank.png; sourceTree = "<group>"; };
-		821071BE19BEDF110044C745 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = ../Classes/GameScene.cpp; sourceTree = "<group>"; };
-		821071BF19BEDF110044C745 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = ../Classes/GameScene.h; sourceTree = "<group>"; };
 		821071C119BEE4360044C745 /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 		8218D52C19C2C1A200A9BF4D /* testshader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = testshader.frag; sourceTree = "<group>"; };
 		8218D52D19C2C1A200A9BF4D /* testshader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = testshader.vert; sourceTree = "<group>"; };
 		8218D53519C2C86500A9BF4D /* CustomShaders.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomShaders.cpp; sourceTree = "<group>"; };
 		8218D53619C2C86500A9BF4D /* CustomShaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomShaders.h; sourceTree = "<group>"; };
-		82228EF419C03FE8008D68A4 /* TestLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestLayer.cpp; path = ../Classes/TestLayer.cpp; sourceTree = "<group>"; };
-		82228EF519C03FE8008D68A4 /* TestLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestLayer.h; path = ../Classes/TestLayer.h; sourceTree = "<group>"; };
+		821B5A9219CD7B88002F217A /* Global.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Global.cpp; sourceTree = "<group>"; };
+		821B5A9319CD7B88002F217A /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		821B5A9519CD7B88002F217A /* PhysicsEditorLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsEditorLoader.cpp; sourceTree = "<group>"; };
+		821B5A9619CD7B88002F217A /* PhysicsEditorLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsEditorLoader.h; sourceTree = "<group>"; };
+		821B5A9819CD7B88002F217A /* TestLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestLayer.cpp; sourceTree = "<group>"; };
+		821B5A9919CD7B88002F217A /* TestLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLayer.h; sourceTree = "<group>"; };
+		821B5A9D19CD7DCD002F217A /* GlobalFuncs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GlobalFuncs.cpp; sourceTree = "<group>"; };
+		821B5A9E19CD7DCD002F217A /* GlobalFuncs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalFuncs.h; sourceTree = "<group>"; };
+		821B5AA019CD7DE6002F217A /* GlobalMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalMacros.h; sourceTree = "<group>"; };
+		821B5AA119CD7FD8002F217A /* GlobalValues.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalValues.h; sourceTree = "<group>"; };
 		822C33BD19BF09E60031170D /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
-		8235B60D19C19A0700F30807 /* PhysicsEditorLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhysicsEditorLoader.cpp; path = ../Classes/PhysicsEditorLoader.cpp; sourceTree = "<group>"; };
-		8235B60E19C19A0700F30807 /* PhysicsEditorLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicsEditorLoader.h; path = ../Classes/PhysicsEditorLoader.h; sourceTree = "<group>"; };
 		8235B61019C19ED300F30807 /* desert.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = desert.plist; sourceTree = "<group>"; };
-		8235B61A19C1AFE400F30807 /* Global.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Global.cpp; path = ../Classes/Global.cpp; sourceTree = "<group>"; };
-		8235B61B19C1AFE400F30807 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Global.h; path = ../Classes/Global.h; sourceTree = "<group>"; };
 		8235B61D19C28F2F00F30807 /* tank.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tank.plist; sourceTree = "<group>"; };
 		828544DD19C2DE9300DBE0E5 /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
 		82C14C6219C1555000888BE3 /* clipper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = clipper.cpp; sourceTree = "<group>"; };
@@ -404,20 +399,11 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				82228EF419C03FE8008D68A4 /* TestLayer.cpp */,
-				82228EF519C03FE8008D68A4 /* TestLayer.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
-				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
-				1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */,
-				821071BE19BEDF110044C745 /* GameScene.cpp */,
-				821071BF19BEDF110044C745 /* GameScene.h */,
-				821071B419BEDB080044C745 /* Level.cpp */,
-				821071B519BEDB080044C745 /* Level.h */,
-				8235B60D19C19A0700F30807 /* PhysicsEditorLoader.cpp */,
-				8235B60E19C19A0700F30807 /* PhysicsEditorLoader.h */,
-				8235B61A19C1AFE400F30807 /* Global.cpp */,
-				8235B61B19C1AFE400F30807 /* Global.h */,
+				821B5A9719CD7B88002F217A /* TestLayer */,
+				821B5A9119CD7B88002F217A /* Global */,
+				821B5A9419CD7B88002F217A /* PhysicEditor */,
 				8218D52B19C2C1A200A9BF4D /* shader */,
 			);
 			name = Classes;
@@ -566,6 +552,40 @@
 			);
 			name = shader;
 			path = ../Classes/shader;
+			sourceTree = "<group>";
+		};
+		821B5A9119CD7B88002F217A /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				821B5A9219CD7B88002F217A /* Global.cpp */,
+				821B5A9319CD7B88002F217A /* Global.h */,
+				821B5A9D19CD7DCD002F217A /* GlobalFuncs.cpp */,
+				821B5A9E19CD7DCD002F217A /* GlobalFuncs.h */,
+				821B5AA019CD7DE6002F217A /* GlobalMacros.h */,
+				821B5AA119CD7FD8002F217A /* GlobalValues.h */,
+			);
+			name = Global;
+			path = ../Classes/Global;
+			sourceTree = "<group>";
+		};
+		821B5A9419CD7B88002F217A /* PhysicEditor */ = {
+			isa = PBXGroup;
+			children = (
+				821B5A9519CD7B88002F217A /* PhysicsEditorLoader.cpp */,
+				821B5A9619CD7B88002F217A /* PhysicsEditorLoader.h */,
+			);
+			name = PhysicEditor;
+			path = ../Classes/PhysicEditor;
+			sourceTree = "<group>";
+		};
+		821B5A9719CD7B88002F217A /* TestLayer */ = {
+			isa = PBXGroup;
+			children = (
+				821B5A9819CD7B88002F217A /* TestLayer.cpp */,
+				821B5A9919CD7B88002F217A /* TestLayer.h */,
+			);
+			name = TestLayer;
+			path = ../Classes/TestLayer;
 			sourceTree = "<group>";
 		};
 		82C14C6019C1555000888BE3 /* libs */ = {
@@ -841,23 +861,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				821071B619BEDB080044C745 /* Level.cpp in Sources */,
+				821B5A9A19CD7B88002F217A /* Global.cpp in Sources */,
 				82C14C7719C1555000888BE3 /* sweep.cc in Sources */,
 				82C14C7819C1555000888BE3 /* sweep_context.cc in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
-				82228EF619C03FE8008D68A4 /* TestLayer.cpp in Sources */,
 				8218D53719C2C86500A9BF4D /* CustomShaders.cpp in Sources */,
 				82C14C7419C1555000888BE3 /* shapes.cc in Sources */,
 				82C14C7519C1555000888BE3 /* advancing_front.cc in Sources */,
+				821B5A9B19CD7B88002F217A /* PhysicsEditorLoader.cpp in Sources */,
 				82C14C7319C1555000888BE3 /* clipper.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				8235B60F19C19A0800F30807 /* PhysicsEditorLoader.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
-				821071C019BEDF110044C745 /* GameScene.cpp in Sources */,
-				8235B61C19C1AFE400F30807 /* Global.cpp in Sources */,
 				82C14C7619C1555000888BE3 /* cdt.cc in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
+				821B5A9C19CD7B88002F217A /* TestLayer.cpp in Sources */,
+				821B5A9F19CD7DCD002F217A /* GlobalFuncs.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -866,7 +884,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
-				5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
