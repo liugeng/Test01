@@ -101,7 +101,8 @@ public:
 	 *  测试ClipperLib
 	 */
 	Interface(1);
-	void t0() {}
+
+	Interface(0);
 	
 public:
 	void test();

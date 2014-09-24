@@ -11,13 +11,13 @@
 #include "CustomShaders.h"
 #include "Global.h"
 
-CALL(10)
+CALL(0)
 
 
-#define R(_VAL_) *((unsigned char*)_VAL_)
-#define G(_VAL_) *((unsigned char*)_VAL_+1)
-#define B(_VAL_) *((unsigned char*)_VAL_+2)
-#define A(_VAL_) *((unsigned char*)_VAL_+3)
+#define R(_VAL_) *((unsigned char*)(_VAL_))
+#define G(_VAL_) *((unsigned char*)(_VAL_)+1)
+#define B(_VAL_) *((unsigned char*)(_VAL_)+2)
+#define A(_VAL_) *((unsigned char*)(_VAL_)+3)
 
 Sprite *_background10 = nullptr;
 Image *_sourceImg = nullptr;
@@ -815,6 +815,50 @@ Implemention(1) {
 	}
 }
 
+Implemention(0) {
+
+	if (!isRunning()) {
+		return;
+	}
+
+	/**
+	 *  1.render a line buffer by every certain distance
+	 *  2.sign the pixel when alpha change form zero to non zero
+	 */
+
+	Sprite *background = Sprite::create("desert.png");
+	background->setAnchorPoint(Point::ZERO);
+	addChild(background);
+
+	Size s = background->getContentSize();
+
+
+	RenderTexture *rt = RenderTexture::create(1, s.height, Texture2D::PixelFormat::RGBA8888);
+
+	for (int i = 0; i < s.width; i += 20) {
+		background->setPositionX(-i);
+		rt->beginWithClear(0, 0, 0, 0);
+		background->visit();
+		rt->end();
+		Director::getInstance()->getRenderer()->render();
+
+		Image *img = rt->newImage();
+		unsigned int *data = (unsigned int*)img->getData();
+		for (int j = 0; j < s.height; j++) {
+			if (A(data+j) > 0) {
+				Sprite *dot = Sprite::create("dot.png");
+				dot->setPosition(Point(i, s.height-j));
+				addChild(dot);
+				break;
+			}
+		}
+		delete img;
+
+	}
+
+
+	background->setPositionX(0);
+}
 
 #pragma mark
 
@@ -874,6 +918,11 @@ void TestLayer::onTouchEnded(Touch *pTouch, Event *pEvent) {
 	CCLOG(__FUNCTION__);
 
 	switch (CUR_TEST) {
+
+		case 0: {
+			t0();
+			break;
+		}
 
 		case 1:
 
