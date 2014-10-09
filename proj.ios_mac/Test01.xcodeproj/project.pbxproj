@@ -73,6 +73,8 @@
 		822C33BE19BF09E60031170D /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 822C33BD19BF09E60031170D /* mask.png */; };
 		8235B61119C19ED300F30807 /* desert.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8235B61019C19ED300F30807 /* desert.plist */; };
 		8235B61E19C28F2F00F30807 /* tank.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8235B61D19C28F2F00F30807 /* tank.plist */; };
+		8236EF6219D50C8900AC1F06 /* lightingSeg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8236EF6119D50C8900AC1F06 /* lightingSeg.png */; };
+		8236EFA719D549D100AC1F06 /* TestLayer1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8236EFA519D549D100AC1F06 /* TestLayer1.cpp */; };
 		828544DE19C2DE9300DBE0E5 /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = 828544DD19C2DE9300DBE0E5 /* hole.png */; };
 		82C14C7319C1555000888BE3 /* clipper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82C14C6219C1555000888BE3 /* clipper.cpp */; };
 		82C14C7419C1555000888BE3 /* shapes.cc in Sources */ = {isa = PBXBuildFile; fileRef = 82C14C6619C1555000888BE3 /* shapes.cc */; };
@@ -302,6 +304,9 @@
 		822C33BD19BF09E60031170D /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
 		8235B61019C19ED300F30807 /* desert.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = desert.plist; sourceTree = "<group>"; };
 		8235B61D19C28F2F00F30807 /* tank.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tank.plist; sourceTree = "<group>"; };
+		8236EF6119D50C8900AC1F06 /* lightingSeg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightingSeg.png; sourceTree = "<group>"; };
+		8236EFA519D549D100AC1F06 /* TestLayer1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestLayer1.cpp; sourceTree = "<group>"; };
+		8236EFA619D549D100AC1F06 /* TestLayer1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLayer1.h; sourceTree = "<group>"; };
 		828544DD19C2DE9300DBE0E5 /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
 		82C14C6219C1555000888BE3 /* clipper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = clipper.cpp; sourceTree = "<group>"; };
 		82C14C6319C1555000888BE3 /* clipper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = clipper.hpp; sourceTree = "<group>"; };
@@ -402,6 +407,7 @@
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				821B5A9719CD7B88002F217A /* TestLayer */,
+				8236EF5D19D50C3500AC1F06 /* module */,
 				821B5A9119CD7B88002F217A /* Global */,
 				821B5A9419CD7B88002F217A /* PhysicEditor */,
 				8218D52B19C2C1A200A9BF4D /* shader */,
@@ -521,6 +527,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8236EF6119D50C8900AC1F06 /* lightingSeg.png */,
 				82CEE52B19CA87A400F67EA9 /* farm.png */,
 				82EB529B19C843550015ED9A /* hole1.png */,
 				828544DD19C2DE9300DBE0E5 /* hole.png */,
@@ -581,11 +588,21 @@
 		821B5A9719CD7B88002F217A /* TestLayer */ = {
 			isa = PBXGroup;
 			children = (
+				8236EFA519D549D100AC1F06 /* TestLayer1.cpp */,
+				8236EFA619D549D100AC1F06 /* TestLayer1.h */,
 				821B5A9819CD7B88002F217A /* TestLayer.cpp */,
 				821B5A9919CD7B88002F217A /* TestLayer.h */,
 			);
 			name = TestLayer;
 			path = ../Classes/TestLayer;
+			sourceTree = "<group>";
+		};
+		8236EF5D19D50C3500AC1F06 /* module */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = module;
+			path = ../Classes/module;
 			sourceTree = "<group>";
 		};
 		82C14C6019C1555000888BE3 /* libs */ = {
@@ -838,6 +855,7 @@
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				82EB529C19C843550015ED9A /* hole1.png in Resources */,
 				82CEE53219CABB7400F67EA9 /* correctcolor9.frag in Resources */,
+				8236EF6219D50C8900AC1F06 /* lightingSeg.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 				8235B61E19C28F2F00F30807 /* tank.plist in Resources */,
 			);
@@ -865,6 +883,7 @@
 				82C14C7719C1555000888BE3 /* sweep.cc in Sources */,
 				82C14C7819C1555000888BE3 /* sweep_context.cc in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				8236EFA719D549D100AC1F06 /* TestLayer1.cpp in Sources */,
 				8218D53719C2C86500A9BF4D /* CustomShaders.cpp in Sources */,
 				82C14C7419C1555000888BE3 /* shapes.cc in Sources */,
 				82C14C7519C1555000888BE3 /* advancing_front.cc in Sources */,
@@ -969,7 +988,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = /Users/liugeng/develop/TestProj/Test01/libs/pbc;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1000,7 +1019,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = /Users/liugeng/develop/TestProj/Test01/libs/pbc;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

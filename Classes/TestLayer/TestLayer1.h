@@ -31,7 +31,6 @@ class TestLayer1 : public Layer {
 
 public:
 
-	// DrawNode with shader
 	Interface(3);
 
 	// lambda

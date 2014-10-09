@@ -4,7 +4,7 @@
 
 namespace_ens_begin
 using namespace lightningBolt;
-void ClineSeg::init(CCPoint start,CCPoint end){
+void ClineSeg::init(Point start,Point end){
     startPoint=start;
     endPoint=end;
 }
@@ -35,23 +35,23 @@ bool ClineSeg::removeChildRef(ClineSeg*child){
 float ClineSeg::getLen()const {
     return ccpDistance(startPoint, endPoint);
 }
-CCPoint ClineSeg::getDir()const {
+Point ClineSeg::getDir()const {
     return ccpNormalize(endPoint-startPoint);
 }
-CCPoint ClineSeg::getVec()const {
+Point ClineSeg::getVec()const {
     return endPoint-startPoint;
 }
-CCPoint ClineSeg::getRightNormal()const {//right side normal or outer normal
-    CCPoint dir=getDir();
-    CCPoint normal(dir.y,-dir.x);
+Point ClineSeg::getRightNormal()const {//right side normal or outer normal
+    Point dir=getDir();
+    Point normal(dir.y,-dir.x);
     return normal;
 }
-CCPoint ClineSeg::getMidPoint()const {
+Point ClineSeg::getMidPoint()const {
     return ccpMidpoint(startPoint, endPoint);
 }
 
 
-void ClightningBoltSprite::initProgram(){
+void ClightningBoltSprite::initProgram(){return;
     //init shader program
     {
         GLchar * vertSource = (GLchar*) CCString::createWithContentsOfFile(CCFileUtils::sharedFileUtils()->fullPathForFilename("shaders/lightningBolt.vsh").c_str())->getCString();
@@ -201,7 +201,7 @@ vector<ClineSeg*> ClightningBoltSprite::splitSeg(ClineSeg*seg,int generationID)
     {
         float maxOffset=seg->getLen()*m_k_offset;
         float offset=randomInRange(-maxOffset,maxOffset);
-        CCPoint midPoint=seg->getMidPoint()+ccpMult(seg->getRightNormal(),offset);
+        Point midPoint=seg->getMidPoint()+ccpMult(seg->getRightNormal(),offset);
         ClineSeg* seg0=new ClineSeg(seg->startPoint,midPoint);
         ClineSeg* seg1=new ClineSeg(midPoint,seg->endPoint);
         seg0->branchID=seg->branchID;//sub seg's branchID inherited from seg
@@ -236,7 +236,7 @@ vector<ClineSeg*> ClightningBoltSprite::splitSeg(ClineSeg*seg,int generationID)
         {
             float randomSmallAngle=randomInRange(-3,3);//-3,3
             float lengthScale=0.6*nPow(1.2, seg->branchID);//0.7//0.6
-            CCPoint splitEnd=ccpMult(rotateVector2(seg0->getVec(),randomSmallAngle), lengthScale)+midPoint;
+            Point splitEnd=ccpMult(rotateVector2(seg0->getVec(),randomSmallAngle), lengthScale)+midPoint;
             ClineSeg*seg2=new ClineSeg(midPoint,splitEnd);
             seg2->branchID=seg->branchID+1;//branch's branchID is seg's branchID+1
             seg2->branchStartGenerationID=generationID;
@@ -405,27 +405,27 @@ void ClightningBoltSprite::genMesh(){
             //       |        |
             //       *--------*
             //      v1        v2
-            const CCPoint&start=seg->startPoint;
-            const CCPoint&end=seg->endPoint;
-            CCPoint rightNorm=seg->getRightNormal();
+            const Point&start=seg->startPoint;
+            const Point&end=seg->endPoint;
+            Point rightNorm=seg->getRightNormal();
             float segW=12*nPow(0.3,seg->branchID);
             float opacity=1.0*nPow(0.4, seg->branchID);
-            CCPoint p0=end+ccpMult(rightNorm, segW/2);
-            CCPoint p1=end+ccpMult(rightNorm, -segW/2);
-            CCPoint p2=start+ccpMult(rightNorm, -segW/2);
-            CCPoint p3=start+ccpMult(rightNorm, segW/2);
+            Point p0=end+ccpMult(rightNorm, segW/2);
+            Point p1=end+ccpMult(rightNorm, -segW/2);
+            Point p2=start+ccpMult(rightNorm, -segW/2);
+            Point p3=start+ccpMult(rightNorm, segW/2);
             {
-                CCPoint mid=seg->getMidPoint();
+                Point mid=seg->getMidPoint();
                 p0=mid+ccpMult(p0-mid, 8);
                 p1=mid+ccpMult(p1-mid, 8);
                 p2=mid+ccpMult(p2-mid, 8);
                 p3=mid+ccpMult(p3-mid, 8);
                 
             }
-            CCPoint texCoord0=CCPoint(0,0);
-            CCPoint texCoord1=CCPoint(0,1);
-            CCPoint texCoord2=CCPoint(1,1);
-            CCPoint texCoord3=CCPoint(1,0);
+            Point texCoord0=Point(0,0);
+            Point texCoord1=Point(0,1);
+            Point texCoord2=Point(1,1);
+            Point texCoord3=Point(1,0);
             m_mesh->vlist.push_back(Cv2(p0.x,p0.y));int vID0=(int)m_mesh->vlist.size()-1;
             m_mesh->vlist.push_back(Cv2(p1.x,p1.y));int vID1=(int)m_mesh->vlist.size()-1;
             m_mesh->vlist.push_back(Cv2(p2.x,p2.y));int vID2=(int)m_mesh->vlist.size()-1;
@@ -466,18 +466,18 @@ void ClightningBoltSprite::genMesh(){
     
 }
 
-void ClightningBoltSprite::setStartAndEnd(CCPoint start,CCPoint end){
+void ClightningBoltSprite::setStartAndEnd(Point start,Point end){
     m_startPoint_parentSpace=start;
     m_endPoint_parentSpace=end;
-    m_startPoint= CCPointApplyAffineTransform(m_startPoint_parentSpace,this->parentToNodeTransform());
-    m_endPoint=CCPointApplyAffineTransform(m_endPoint_parentSpace,this->parentToNodeTransform());
+    m_startPoint= PointApplyAffineTransform(m_startPoint_parentSpace,this->parentToNodeTransform());
+    m_endPoint=PointApplyAffineTransform(m_endPoint_parentSpace,this->parentToNodeTransform());
     //startPoint and endPoint is changed
     
     //relocate all the seges in segList
     if(m_headSeg&&m_tailSeg)
     {
         //move all seges let headStart equals to startPoint
-        CCPoint vec_headStartToStart=m_startPoint-m_headSeg->startPoint;
+        Point vec_headStartToStart=m_startPoint-m_headSeg->startPoint;
         int nseg=(int)m_segList.size();
         for(int i=0;i<nseg;i++){
             ClineSeg*seg=m_segList[i];
@@ -490,9 +490,9 @@ void ClightningBoltSprite::setStartAndEnd(CCPoint start,CCPoint end){
         
         
         //rotate all seges in segList
-        CCPoint vec_headStartToTailEnd=m_tailSeg->endPoint-m_headSeg->startPoint;
-        CCPoint vec_headStartToEnd=this->m_endPoint-m_headSeg->startPoint;
-        CCPoint cosA_sinA=calculateCosASinAOfVec1ToVec2(vec_headStartToTailEnd, vec_headStartToEnd);
+        Point vec_headStartToTailEnd=m_tailSeg->endPoint-m_headSeg->startPoint;
+        Point vec_headStartToEnd=this->m_endPoint-m_headSeg->startPoint;
+        Point cosA_sinA=calculateCosASinAOfVec1ToVec2(vec_headStartToTailEnd, vec_headStartToEnd);
         float cosA=cosA_sinA.x;
         float sinA=cosA_sinA.y;
         for(int i=0;i<nseg;i++){
@@ -524,18 +524,18 @@ void ClightningBoltSprite::setStartAndEnd(CCPoint start,CCPoint end){
 }
 
 /*
-void ClightningBoltSprite::setStartPoint(CCPoint startPoint){
+void ClightningBoltSprite::setStartPoint(Point startPoint){
     if(isPointEqual(m_startPoint_parentSpace, startPoint, 0.0))return;
     m_startPoint_parentSpace=startPoint;
-    m_startPoint= CCPointApplyAffineTransform(m_startPoint_parentSpace,this->parentToNodeTransform());
+    m_startPoint= PointApplyAffineTransform(m_startPoint_parentSpace,this->parentToNodeTransform());
     //startPoint changed
     //relocate all the seges in segList
     if(m_headSeg&&m_tailSeg)
     {
         //rotate all seges in segList
-        CCPoint vec_TailEndToHeadStart=m_headSeg->startPoint-m_tailSeg->endPoint;
-        CCPoint vec_TailEndToStart=this->m_startPoint-m_tailSeg->endPoint;
-        CCPoint cosA_sinA=calculateCosASinAOfVec1ToVec2(vec_TailEndToHeadStart, vec_TailEndToStart);
+        Point vec_TailEndToHeadStart=m_headSeg->startPoint-m_tailSeg->endPoint;
+        Point vec_TailEndToStart=this->m_startPoint-m_tailSeg->endPoint;
+        Point cosA_sinA=calculateCosASinAOfVec1ToVec2(vec_TailEndToHeadStart, vec_TailEndToStart);
         float cosA=cosA_sinA.x;
         float sinA=cosA_sinA.y;
         int nseg=(int)m_segList.size();
@@ -569,11 +569,11 @@ void ClightningBoltSprite::setStartPoint(CCPoint startPoint){
     updateNGeneration();
 
 }
-void ClightningBoltSprite::setEndPoint(CCPoint endPoint){
+void ClightningBoltSprite::setEndPoint(Point endPoint){
     if(isPointEqual(m_endPoint_parentSpace, endPoint, 0.0))return;
     m_endPoint_parentSpace=endPoint;
     
-    m_endPoint=CCPointApplyAffineTransform(m_endPoint_parentSpace,this->parentToNodeTransform());
+    m_endPoint=PointApplyAffineTransform(m_endPoint_parentSpace,this->parentToNodeTransform());
     
     //endPoint changed
   
@@ -581,9 +581,9 @@ void ClightningBoltSprite::setEndPoint(CCPoint endPoint){
     if(m_headSeg&&m_tailSeg)
     {
         //rotate all seges in segList
-        CCPoint vec_headStartToTailEnd=m_tailSeg->endPoint-m_headSeg->startPoint;
-        CCPoint vec_headStartToEnd=this->m_endPoint-m_headSeg->startPoint;
-        CCPoint cosA_sinA=calculateCosASinAOfVec1ToVec2(vec_headStartToTailEnd, vec_headStartToEnd);
+        Point vec_headStartToTailEnd=m_tailSeg->endPoint-m_headSeg->startPoint;
+        Point vec_headStartToEnd=this->m_endPoint-m_headSeg->startPoint;
+        Point cosA_sinA=calculateCosASinAOfVec1ToVec2(vec_headStartToTailEnd, vec_headStartToEnd);
         float cosA=cosA_sinA.x;
         float sinA=cosA_sinA.y;
         int nseg=(int)m_segList.size();
@@ -624,7 +624,7 @@ void ClightningBoltSprite::debugDraw_segWireFrame(float lineWidth){
         Cv2&p0=m_mesh->vlist[IDtri.getvIDByIndex(0)];
         Cv2&p1=m_mesh->vlist[IDtri.getvIDByIndex(1)];
         Cv2&p2=m_mesh->vlist[IDtri.getvIDByIndex(2)];
-        CCPoint vertices[3]={ccp(p0.x(),p0.y()),ccp(p1.x(),p1.y()),ccp(p2.x(),p2.y())};
+        Point vertices[3]={ccp(p0.x(),p0.y()),ccp(p1.x(),p1.y()),ccp(p2.x(),p2.y())};
         ccDrawPoly(vertices, 3, true);
     }
 
@@ -641,50 +641,50 @@ void ClightningBoltSprite::debugDraw_segLineAndDot(float lineWidth,float pointSi
          ccDrawPoint(seg->endPoint);
      }
 }
-void ClightningBoltSprite::draw(){
-    //draw mesh
-    ccGLBlendFunc( m_sBlendFunc.src, m_sBlendFunc.dst );
-    //----change shader
-    assert(m_program);
-    this->setShaderProgram(m_program);
-    CGLProgramWithUnifos*program=(CGLProgramWithUnifos*)this->getShaderProgram();
-    ccGLEnable(m_eGLServerState);
-    //pass values for cocos2d-x build-in uniforms
-    program->use();
-    program->setUniformsForBuiltins();
-    //pass values for my own uniforms
-    float alpha=(float)this->getOpacity()/255.0*m_opacityZoom;
-    program->passUnifoValue1f("u_opacity", alpha);
-    //----enable attributes
-    bool isAttribPositionOn=CindexVBO::isEnabledAttribArray_position();
-    bool isAttribColorOn=CindexVBO::isEnabledAttribArray_color();
-    bool isAttribTexCoordOn=CindexVBO::isEnabledAttribArray_texCoord();
-    CindexVBO::enableAttribArray_position(true);
-    CindexVBO::enableAttribArray_texCoord(true);
-    CindexVBO::enableAttribArray_color(true);
-    //----bindTexture
-    ccGLBindTexture2D( this->getTexture()->getName());
-    //----draw
-    m_indexVBO->setPointer_position();
-    m_indexVBO->setPointer_texCoord();
-    m_indexVBO->setPointer_color();
-    m_indexVBO->draw(GL_TRIANGLES);
-    //----disable attributes
-    CindexVBO::enableAttribArray_position(isAttribPositionOn);
-    CindexVBO::enableAttribArray_color(isAttribColorOn);
-    CindexVBO::enableAttribArray_texCoord(isAttribTexCoordOn);
-    //----unbindTexture
-    ccGLBindTexture2D(0);
-   
-    //debugDraw
-    if(m_isDrawDebug){
-        debugDraw_segLineAndDot(0.5,3);
-    //    debugDraw_segWireFrame(1);
-    }
-    CHECK_GL_ERROR_DEBUG();
-}
+//void ClightningBoltSprite::draw(){
+//    //draw mesh
+//    ccGLBlendFunc( m_sBlendFunc.src, m_sBlendFunc.dst );
+//    //----change shader
+//    assert(m_program);
+//    this->setShaderProgram(m_program);
+//    CGLProgramWithUnifos*program=(CGLProgramWithUnifos*)this->getShaderProgram();
+//    ccGLEnable(m_eGLServerState);
+//    //pass values for cocos2d-x build-in uniforms
+//    program->use();
+//    program->setUniformsForBuiltins();
+//    //pass values for my own uniforms
+//    float alpha=(float)this->getOpacity()/255.0*m_opacityZoom;
+//    program->passUnifoValue1f("u_opacity", alpha);
+//    //----enable attributes
+//    bool isAttribPositionOn=CindexVBO::isEnabledAttribArray_position();
+//    bool isAttribColorOn=CindexVBO::isEnabledAttribArray_color();
+//    bool isAttribTexCoordOn=CindexVBO::isEnabledAttribArray_texCoord();
+//    CindexVBO::enableAttribArray_position(true);
+//    CindexVBO::enableAttribArray_texCoord(true);
+//    CindexVBO::enableAttribArray_color(true);
+//    //----bindTexture
+//    ccGLBindTexture2D( this->getTexture()->getName());
+//    //----draw
+//    m_indexVBO->setPointer_position();
+//    m_indexVBO->setPointer_texCoord();
+//    m_indexVBO->setPointer_color();
+//    m_indexVBO->draw(GL_TRIANGLES);
+//    //----disable attributes
+//    CindexVBO::enableAttribArray_position(isAttribPositionOn);
+//    CindexVBO::enableAttribArray_color(isAttribColorOn);
+//    CindexVBO::enableAttribArray_texCoord(isAttribTexCoordOn);
+//    //----unbindTexture
+//    ccGLBindTexture2D(0);
+//   
+//    //debugDraw
+//    if(m_isDrawDebug){
+//        debugDraw_segLineAndDot(0.5,3);
+//    //    debugDraw_segWireFrame(1);
+//    }
+//    CHECK_GL_ERROR_DEBUG();
+//}
 //---------------------------------------------
-bool ClightningBoltNode::init(const CCPoint&start,const CCPoint&end){
+bool ClightningBoltNode::init(const Point&start,const Point&end){
     m_start=start;
     m_end=end;
     //lightingSprit
@@ -718,121 +718,126 @@ bool ClightningBoltNode::init(const CCPoint&start,const CCPoint&end){
 
 
 //creates the action
-CflashAction* CflashAction::create(float fDuration,float oneFlashTime){
-    
-    CflashAction *p = new CflashAction();
-    p->initWithDuration(fDuration, oneFlashTime);
-    p->autorelease();
-    
-    return p;
-}
-//initializes the action
-bool CflashAction::initWithDuration(float fDuration,float oneFlashTime){
-    if (CCActionInterval::initWithDuration(fDuration))
-    {
-        //my init code
-        initMembers();
-        m_oneFlashTime=oneFlashTime;
-        return true;
-    }
-    
-    return false;
-}
-bool CflashAction::isDone(){
-    if(getDuration()==-1){
-        return false;
-    }else{
-        return CCActionInterval::isDone();
-    }
-}
-
-
-void CflashAction::stop(){
-    //clean up
-    stopAnimation(m_pTarget);
-    //call father stop
-    CCActionInterval::stop();
-}
-
-void CflashAction::startWithTarget(CCNode *pTarget){
-    //set some members of pTarget
-    startAnimation(pTarget);
-    //call father startWithTarget
-    CCActionInterval::startWithTarget(pTarget);
-    
-}
-void CflashAction::update(float time){//the time actually is percentage, namely eclipsedTime/totalDuration
-    //the t in action's update(t) and sprite's update(t) is different meaning
-    //t in action's update(t) means the progress percentage, see CCActionInterval::step()
-    //t in sprite's update(t) means the deltaTime between current frame and previous frame, see CCDirector::drawScene()
-    //cout<<"time:"<<time<<endl;
-  /*  if(false){
-        m_timeFoe=m_timeCur;
-        float progressPercentage=time;
-        m_timeCur=progressPercentage*getDuration();
-        //((ClightningBoltNode*)m_pTarget)->updateFlashAction(m_timeCur,m_timeCur-m_timeFoe);
-    }*/
-    
-}
-void CflashAction::startAnimation(CCNode*pTarget){
-    ClightningBoltNode*lbNode=(ClightningBoltNode*)pTarget;
-    ClightningBoltSprite*lbSprite=lbNode->m_lbSprite;
-    ClightningBoltSprite*lbSprite2=lbNode->m_lbSprite2;
-    //
-    stopAnimation(pTarget);
-    //
-    lbSprite->setOpacity(m_startOpacity);
-    lbSprite2->setOpacity(m_endOpacity);
-    //run action
-    CCDelayTime*delay=CCDelayTime::create(m_oneFlashTime/2);
-    CCCallFuncN*callFunc_flashForever=CCCallFuncN::create(this,callfuncN_selector(CflashAction::callBack_flashForever));
-    CCAction*action=CCSequence::create(callFunc_flashForever,NULL);
-    CCAction*action2=CCSequence::create(delay,callFunc_flashForever,NULL);
-    lbSprite->runAction(action);
-    lbSprite2->runAction(action2);
-}
-void CflashAction::stopAnimation(CCNode*pTarget){
-    ClightningBoltNode*lbNode=(ClightningBoltNode*)pTarget;
-    ClightningBoltSprite*lbSprite=lbNode->m_lbSprite;
-    ClightningBoltSprite*lbSprite2=lbNode->m_lbSprite2;
-    lbSprite->stopAllActions();
-    lbSprite2->stopAllActions();
-}
-void CflashAction::callBack_flashForever(CCNode*sender){
-    m_jitterTimeOfOneFlash=m_oneFlashTime/4;
-    m_jitterInterval=m_oneFlashTime/6;
-    //----fadeTo action
-    CCFadeTo*fadeTo=CCFadeTo::create(m_oneFlashTime, m_endOpacity) ;
-    CCCallFuncN*callFunc_genLightning=CCCallFuncN::create(this,callfuncN_selector(CflashAction::callBack_genLightning));
-    CCCallFuncN*callFunc_jitter=CCCallFuncN::create(this,callfuncN_selector(CflashAction::callBack_jitter));
-    CCCallFuncN*callFunc_resetOpacity=CCCallFuncN::create(this, callfuncN_selector(CflashAction::callBack_resetOpacity));
-    //----jitter action sequence
-    CCDelayTime*delay_jitterInterval=CCDelayTime::create(m_jitterInterval);
-    CCArray*array=CCArray::create();
-    float totalTime=0;
-    while (true) {
-        if(totalTime>=m_jitterTimeOfOneFlash)break;
-        array->addObject(delay_jitterInterval);
-        if(m_isDoJitter)array->addObject(callFunc_jitter);
-        totalTime+=m_jitterInterval;
-    }
-    CCSequence*seq=CCSequence::create(array);
-    //----make whole action
-    CCAction*action=CCRepeatForever::create(CCSpawn::create(seq,CCSequence::create(callFunc_resetOpacity,fadeTo,callFunc_genLightning,NULL),NULL));
-    //----runAction
-    ((ClightningBoltSprite*)sender)->runAction(action);
-    
-}
-void CflashAction::callBack_genLightning(CCNode* sender){
-    ((ClightningBoltSprite*)sender)->genLighting();
-}
-
-void CflashAction::callBack_jitter(CCNode*sender){
-    ((ClightningBoltSprite*)sender)->doJitter();
-    
-}
-void CflashAction::callBack_resetOpacity(CCNode*sender){
-    ((ClightningBoltSprite*)sender)->setOpacity(m_startOpacity);
-}
+//CflashAction* CflashAction::create(float fDuration,float oneFlashTime){
+//    
+//    CflashAction *p = new CflashAction();
+//    p->initWithDuration(fDuration, oneFlashTime);
+//    p->autorelease();
+//    
+//    return p;
+//}
+////initializes the action
+//bool CflashAction::initWithDuration(float fDuration,float oneFlashTime){
+//    if (CCActionInterval::initWithDuration(fDuration))
+//    {
+//        //my init code
+//        initMembers();
+//        m_oneFlashTime=oneFlashTime;
+//        return true;
+//    }
+//    
+//    return false;
+//}
+//bool CflashAction::isDone() const {
+//    if(getDuration()==-1){
+//        return false;
+//    }else{
+//        return CCActionInterval::isDone();
+//    }
+//}
+//
+//
+//void CflashAction::stop(){
+//    //clean up
+//    stopAnimation(getTarget());
+//    //call father stop
+//    CCActionInterval::stop();
+//}
+//
+//void CflashAction::startWithTarget(CCNode *pTarget){
+//    //set some members of pTarget
+//    startAnimation(pTarget);
+//    //call father startWithTarget
+//    CCActionInterval::startWithTarget(pTarget);
+//    
+//}
+//void CflashAction::update(float time){//the time actually is percentage, namely eclipsedTime/totalDuration
+//    //the t in action's update(t) and sprite's update(t) is different meaning
+//    //t in action's update(t) means the progress percentage, see CCActionInterval::step()
+//    //t in sprite's update(t) means the deltaTime between current frame and previous frame, see CCDirector::drawScene()
+//    //cout<<"time:"<<time<<endl;
+//  /*  if(false){
+//        m_timeFoe=m_timeCur;
+//        float progressPercentage=time;
+//        m_timeCur=progressPercentage*getDuration();
+//        //((ClightningBoltNode*)m_pTarget)->updateFlashAction(m_timeCur,m_timeCur-m_timeFoe);
+//    }*/
+//    
+//}
+//void CflashAction::startAnimation(CCNode*pTarget){
+//    ClightningBoltNode*lbNode=(ClightningBoltNode*)pTarget;
+//    ClightningBoltSprite*lbSprite=lbNode->m_lbSprite;
+//    ClightningBoltSprite*lbSprite2=lbNode->m_lbSprite2;
+//    //
+//    stopAnimation(pTarget);
+//    //
+//    lbSprite->setOpacity(m_startOpacity);
+//    lbSprite2->setOpacity(m_endOpacity);
+//    //run action
+//    CCDelayTime*delay=CCDelayTime::create(m_oneFlashTime/2);
+//    CCCallFuncN*callFunc_flashForever=CCCallFuncN::create(this,callfuncN_selector(CflashAction::callBack_flashForever));
+//    CCAction*action=Sequence::create(callFunc_flashForever,NULL);
+//    CCAction*action2=Sequence::create(delay,callFunc_flashForever,NULL);
+//    lbSprite->runAction(action);
+//    lbSprite2->runAction(action2);
+//}
+//void CflashAction::stopAnimation(CCNode*pTarget){
+//    ClightningBoltNode*lbNode=(ClightningBoltNode*)pTarget;
+//    ClightningBoltSprite*lbSprite=lbNode->m_lbSprite;
+//    ClightningBoltSprite*lbSprite2=lbNode->m_lbSprite2;
+//    lbSprite->stopAllActions();
+//    lbSprite2->stopAllActions();
+//}
+//void CflashAction::callBack_flashForever(CCNode*sender){
+//    m_jitterTimeOfOneFlash=m_oneFlashTime/4;
+//    m_jitterInterval=m_oneFlashTime/6;
+//    //----fadeTo action
+//    CCFadeTo*fadeTo=CCFadeTo::create(m_oneFlashTime, m_endOpacity) ;
+//    CCCallFuncN*callFunc_genLightning=CCCallFuncN::create(this,callfuncN_selector(CflashAction::callBack_genLightning));
+//    CCCallFuncN*callFunc_jitter=CCCallFuncN::create(this,callfuncN_selector(CflashAction::callBack_jitter));
+//    CCCallFuncN*callFunc_resetOpacity=CCCallFuncN::create(this, callfuncN_selector(CflashAction::callBack_resetOpacity));
+//    //----jitter action sequence
+//    CCDelayTime*delay_jitterInterval=CCDelayTime::create(m_jitterInterval);
+//
+//	Vector<FiniteTimeAction*> array;
+//    float totalTime=0;
+//    while (true) {
+//        if(totalTime>=m_jitterTimeOfOneFlash)break;
+//		array.pushBack(delay_jitterInterval);
+////        array->addObject(delay_jitterInterval);
+////        if(m_isDoJitter)array->addObject(callFunc_jitter);
+//		if (m_isDoJitter) {
+//			array.pushBack(callFunc_jitter);
+//		}
+//        totalTime+=m_jitterInterval;
+//    }
+//    Sequence*seq=Sequence::create(array);
+//    //----make whole action
+//    CCAction*action=CCRepeatForever::create(CCSpawn::create(seq,Sequence::create(callFunc_resetOpacity,fadeTo,callFunc_genLightning,NULL),NULL));
+//    //----runAction
+//    ((ClightningBoltSprite*)sender)->runAction(action);
+//    
+//}
+//void CflashAction::callBack_genLightning(CCNode* sender){
+//    ((ClightningBoltSprite*)sender)->genLighting();
+//}
+//
+//void CflashAction::callBack_jitter(CCNode*sender){
+//    ((ClightningBoltSprite*)sender)->doJitter();
+//    
+//}
+//void CflashAction::callBack_resetOpacity(CCNode*sender){
+//    ((ClightningBoltSprite*)sender)->setOpacity(m_startOpacity);
+//}
 
 namespace_ens_end

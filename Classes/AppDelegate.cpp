@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "TestLayer.h"
+#include "TestLayer1.h"
 
 USING_NS_CC;
 
@@ -35,7 +35,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    auto scene = TestLayer::scene();
+    auto scene = TestLayer1::scene();
 
     // run
     director->runWithScene(scene);

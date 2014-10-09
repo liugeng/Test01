@@ -11,23 +11,17 @@
 
 CALL(3)
 
-
 Implemention(3) {
-	DrawNode *draw = DrawNode::create();
-	addChild(draw);
 
-	Vec2 *verts = new Vec2[3];
-	verts[0] = Point(100, 100);
-	verts[1] = Point(200, 300);
-	verts[2] = Point(300, 200);
-//	draw->drawPolygon(verts, 3, Color4F(0, 0, 0, 0), 10, Color4F::WHITE);
-	draw->drawSegment(Point(100, 100), Point(200, 300), 1, Color4F::WHITE);
+	timeval t;
+	gettimeofday(&t, nullptr);
+	int64_t tmsec = (int64_t)t.tv_sec*1000 + t.tv_usec/1000;
 
-	GLProgram *program = GLProgram::createWithByteArrays(ccPositionTextureColor_vert, drawnode_frag);
-	draw->setGLProgram(program);
-
-//	GLProgramState *state = GLProgramState::getOrCreateWithGLProgram(program);
-
+	time_t tsec = tmsec / 1000;
+	tm *timeinfo = localtime(&tsec);
+	char buf[32] = {0};
+	strftime(buf, 32, "%m月%d日%H时%M分", timeinfo);
+	CCLOG("%s", buf);
 }
 
 Implemention(2) {
