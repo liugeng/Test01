@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>84A1C0F8-69D4-43DA-9C78-E5CF3B53BEAA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>cocos2d_lua_bindings</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C8FDC891-47EA-4F81-BDC2-7DD42D90EFCA</key>
+		<string>https://github.com/liugeng/Test01</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>cocos2d/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C8FDC891-47EA-4F81-BDC2-7DD42D90EFCA</key>
+		<string>../../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/liugeng/Test01</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C8FDC891-47EA-4F81-BDC2-7DD42D90EFCA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C8FDC891-47EA-4F81-BDC2-7DD42D90EFCA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Test01</string>
+		</dict>
+	</array>
+</dict>
+</plist>
