@@ -88,6 +88,8 @@
 		82EB529519C80DD60015ED9A /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EB529419C80DD60015ED9A /* white.png */; };
 		82EB529919C82EBE0015ED9A /* correctcolor.frag in Resources */ = {isa = PBXBuildFile; fileRef = 82EB529819C82EBE0015ED9A /* correctcolor.frag */; };
 		82EB529C19C843550015ED9A /* hole1.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EB529B19C843550015ED9A /* hole1.png */; };
+		82F03C7C19E78D180043B5DC /* swordman.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82F03C7A19E78D180043B5DC /* swordman.plist */; };
+		82F03C7D19E78D180043B5DC /* swordman.png in Resources */ = {isa = PBXBuildFile; fileRef = 82F03C7B19E78D180043B5DC /* swordman.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -328,6 +330,8 @@
 		82EB529419C80DD60015ED9A /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		82EB529819C82EBE0015ED9A /* correctcolor.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = correctcolor.frag; sourceTree = "<group>"; };
 		82EB529B19C843550015ED9A /* hole1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole1.png; sourceTree = "<group>"; };
+		82F03C7A19E78D180043B5DC /* swordman.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = swordman.plist; sourceTree = "<group>"; };
+		82F03C7B19E78D180043B5DC /* swordman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swordman.png; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -527,6 +531,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				82F03C7A19E78D180043B5DC /* swordman.plist */,
+				82F03C7B19E78D180043B5DC /* swordman.png */,
 				8236EF6119D50C8900AC1F06 /* lightingSeg.png */,
 				82CEE52B19CA87A400F67EA9 /* farm.png */,
 				82EB529B19C843550015ED9A /* hole1.png */,
@@ -827,6 +833,7 @@
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				828544DE19C2DE9300DBE0E5 /* hole.png in Resources */,
+				82F03C7D19E78D180043B5DC /* swordman.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				821071BC19BEDB8A0044C745 /* tank.png in Resources */,
@@ -850,6 +857,7 @@
 				8218D52E19C2C1A200A9BF4D /* testshader.frag in Resources */,
 				8218D52F19C2C1A200A9BF4D /* testshader.vert in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
+				82F03C7C19E78D180043B5DC /* swordman.plist in Resources */,
 				82EB529919C82EBE0015ED9A /* correctcolor.frag in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,

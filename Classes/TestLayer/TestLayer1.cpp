@@ -9,7 +9,33 @@
 #include "TestLayer1.h"
 #include "CustomShaders.h"
 
-CALL(3)
+CALL(4)
+
+
+Implemention(4) {
+
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("swordman.plist");
+
+	ValueMap value = FileUtils::getInstance()->getValueMapFromFile("swordman.plist");
+	ValueMap frames = value["frames"].asValueMap();
+	for (auto it : frames) {
+		CCLOG("%s", it.first.c_str());
+
+		Sprite *sp = Sprite::createWithSpriteFrameName(it.first.c_str());
+
+		RenderTexture *rt = RenderTexture::create(sp->getContentSize().width*2, sp->getContentSize().height*2, Texture2D::PixelFormat::RGBA8888);
+		rt->begin();
+		sp->setAnchorPoint(Point::ZERO);
+		sp->setScale(2);
+		sp->visit();
+		rt->end();
+		Director::getInstance()->getRenderer()->render();
+
+		rt->saveToFile(it.first.c_str());
+	}
+
+	CCLOG("end");
+}
 
 Implemention(3) {
 

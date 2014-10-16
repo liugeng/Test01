@@ -31,6 +31,7 @@ class TestLayer1 : public Layer {
 
 public:
 
+	Interface(4);
 	Interface(3);
 
 	// lambda
