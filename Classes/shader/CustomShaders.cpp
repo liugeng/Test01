@@ -15,3 +15,5 @@
 #include "correctcolor.frag"
 #include "correctcolor8.frag"
 #include "correctcolor9.frag"
+#include "imageAlpha.frag"
+#include "frozen.frag"

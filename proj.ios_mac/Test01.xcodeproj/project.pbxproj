@@ -76,6 +76,10 @@
 		8236EF6219D50C8900AC1F06 /* lightingSeg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8236EF6119D50C8900AC1F06 /* lightingSeg.png */; };
 		8236EFA719D549D100AC1F06 /* TestLayer1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8236EFA519D549D100AC1F06 /* TestLayer1.cpp */; };
 		828544DE19C2DE9300DBE0E5 /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = 828544DD19C2DE9300DBE0E5 /* hole.png */; };
+		828FA7A519F0B48E00BE39B6 /* imageAlpha.frag in Resources */ = {isa = PBXBuildFile; fileRef = 828FA7A419F0B48E00BE39B6 /* imageAlpha.frag */; };
+		828FA7AA19F0B64300BE39B6 /* swordman_mask.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 828FA7A819F0B64300BE39B6 /* swordman_mask.jpg */; };
+		828FA7AB19F0B64300BE39B6 /* swordman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 828FA7A919F0B64300BE39B6 /* swordman.jpg */; };
+		828FA7AD19F0B95600BE39B6 /* frozen.frag in Resources */ = {isa = PBXBuildFile; fileRef = 828FA7AC19F0B95600BE39B6 /* frozen.frag */; };
 		82C14C7319C1555000888BE3 /* clipper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82C14C6219C1555000888BE3 /* clipper.cpp */; };
 		82C14C7419C1555000888BE3 /* shapes.cc in Sources */ = {isa = PBXBuildFile; fileRef = 82C14C6619C1555000888BE3 /* shapes.cc */; };
 		82C14C7519C1555000888BE3 /* advancing_front.cc in Sources */ = {isa = PBXBuildFile; fileRef = 82C14C6B19C1555000888BE3 /* advancing_front.cc */; };
@@ -310,6 +314,10 @@
 		8236EFA519D549D100AC1F06 /* TestLayer1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestLayer1.cpp; sourceTree = "<group>"; };
 		8236EFA619D549D100AC1F06 /* TestLayer1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLayer1.h; sourceTree = "<group>"; };
 		828544DD19C2DE9300DBE0E5 /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
+		828FA7A419F0B48E00BE39B6 /* imageAlpha.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = imageAlpha.frag; sourceTree = "<group>"; };
+		828FA7A819F0B64300BE39B6 /* swordman_mask.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swordman_mask.jpg; sourceTree = "<group>"; };
+		828FA7A919F0B64300BE39B6 /* swordman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swordman.jpg; sourceTree = "<group>"; };
+		828FA7AC19F0B95600BE39B6 /* frozen.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = frozen.frag; sourceTree = "<group>"; };
 		82C14C6219C1555000888BE3 /* clipper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = clipper.cpp; sourceTree = "<group>"; };
 		82C14C6319C1555000888BE3 /* clipper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = clipper.hpp; sourceTree = "<group>"; };
 		82C14C6619C1555000888BE3 /* shapes.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shapes.cc; sourceTree = "<group>"; };
@@ -531,6 +539,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				828FA7A819F0B64300BE39B6 /* swordman_mask.jpg */,
+				828FA7A919F0B64300BE39B6 /* swordman.jpg */,
 				82F03C7A19E78D180043B5DC /* swordman.plist */,
 				82F03C7B19E78D180043B5DC /* swordman.png */,
 				8236EF6119D50C8900AC1F06 /* lightingSeg.png */,
@@ -562,6 +572,8 @@
 				82CEE53119CABB7400F67EA9 /* correctcolor9.frag */,
 				8218D52C19C2C1A200A9BF4D /* testshader.frag */,
 				8218D52D19C2C1A200A9BF4D /* testshader.vert */,
+				828FA7A419F0B48E00BE39B6 /* imageAlpha.frag */,
+				828FA7AC19F0B95600BE39B6 /* frozen.frag */,
 			);
 			name = shader;
 			path = ../Classes/shader;
@@ -831,6 +843,7 @@
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
+				828FA7A519F0B48E00BE39B6 /* imageAlpha.frag in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				828544DE19C2DE9300DBE0E5 /* hole.png in Resources */,
 				82F03C7D19E78D180043B5DC /* swordman.png in Resources */,
@@ -848,6 +861,7 @@
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 				8235B61119C19ED300F30807 /* desert.plist in Resources */,
+				828FA7AA19F0B64300BE39B6 /* swordman_mask.jpg in Resources */,
 				821071C219BEE4360044C745 /* dot.png in Resources */,
 				822C33BE19BF09E60031170D /* mask.png in Resources */,
 				821071BB19BEDB8A0044C745 /* desert.png in Resources */,
@@ -857,9 +871,11 @@
 				8218D52E19C2C1A200A9BF4D /* testshader.frag in Resources */,
 				8218D52F19C2C1A200A9BF4D /* testshader.vert in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
+				828FA7AB19F0B64300BE39B6 /* swordman.jpg in Resources */,
 				82F03C7C19E78D180043B5DC /* swordman.plist in Resources */,
 				82EB529919C82EBE0015ED9A /* correctcolor.frag in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
+				828FA7AD19F0B95600BE39B6 /* frozen.frag in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				82EB529C19C843550015ED9A /* hole1.png in Resources */,
 				82CEE53219CABB7400F67EA9 /* correctcolor9.frag in Resources */,

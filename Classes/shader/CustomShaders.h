@@ -16,5 +16,7 @@ extern const GLchar* testshader_frag;
 extern const GLchar* correctcolor_frag;
 extern const GLchar* correctcolor_frag8;
 extern const GLchar* correctcolor_frag9;
+extern const GLchar* imageAlpha_frag;
+extern const GLchar* frozen_frag;
 
 #endif /* defined(__Test01__CustomShaders__) */

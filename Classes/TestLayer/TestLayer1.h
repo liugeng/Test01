@@ -31,7 +31,18 @@ class TestLayer1 : public Layer {
 
 public:
 
+	Interface(7);
+
+	// create image with alpha from jpg and mask pair
+	Interface(6);
+
+	// convert png to jpg and mask images pair
+	Interface(5);
+
+	// split images from plist file
 	Interface(4);
+
+	// format time
 	Interface(3);
 
 	// lambda

@@ -9,8 +9,63 @@
 #include "TestLayer1.h"
 #include "CustomShaders.h"
 
-CALL(4)
+#define R(_VAL_) *((unsigned char*)(_VAL_))
+#define G(_VAL_) *((unsigned char*)(_VAL_)+1)
+#define B(_VAL_) *((unsigned char*)(_VAL_)+2)
+#define A(_VAL_) *((unsigned char*)(_VAL_)+3)
 
+CALL(7)
+
+
+Implemention(7) {
+
+	Sprite *sp = Sprite::create("tank.png");
+	sp->setPosition(_center);
+	addChild(sp);
+
+	GLProgram *program = GLProgram::createWithByteArrays(testshader_vert, frozen_frag);
+	sp->setGLProgram(program);
+
+}
+
+Implemention(6) {
+
+	Sprite *sp = Sprite::create("swordman.jpg");
+	sp->setPosition(_center);
+	addChild(sp);
+
+
+	Texture2D *tex = Director::getInstance()->getTextureCache()->addImage("swordman_mask.jpg");
+	tex->retain();
+
+	GLProgram *program = GLProgram::createWithByteArrays(testshader_vert, imageAlpha_frag);
+	sp->setGLProgram(program);
+
+	GLProgramState *state = GLProgramState::getOrCreateWithGLProgram(program);
+	state->setUniformTexture("u_masktex", tex);
+
+}
+
+Implemention(5) {
+
+	string path = FileUtils::getInstance()->getWritablePath();
+	CCLOG("save path: %s", path.c_str());
+
+	Image *img = new Image;
+	img->initWithImageFile("swordman.png");
+	img->saveToFile((path+"swordman.jpg").c_str());
+
+	unsigned int *data = (unsigned int*)img->getData();
+	for (int i = 0; i < img->getHeight(); i++) {
+		for (int j = 0; j < img->getWidth(); j++) {
+			unsigned int &pixel = data[i*img->getWidth()+j];
+			R(&pixel) = G(&pixel) = B(&pixel) = A(&pixel);
+		}
+	}
+	img->saveToFile((path+"swordman_mask.jpg").c_str());
+
+	delete img;
+}
 
 Implemention(4) {
 
@@ -101,7 +156,7 @@ bool TestLayer1::init() {
 
 	_win = Director::getInstance()->getWinSize();
 	_center = Point(_win.width/2, _win.height/2);
-	LayerColor *lc = LayerColor::create(Color4B::BLACK, _win.width, _win.height);
+	LayerColor *lc = LayerColor::create(Color4B::GRAY, _win.width, _win.height);
 	addChild(lc, -1);
 
 	EventListenerTouchOneByOne *touchListener = EventListenerTouchOneByOne::create();
