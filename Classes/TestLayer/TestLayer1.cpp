@@ -14,18 +14,29 @@
 #define B(_VAL_) *((unsigned char*)(_VAL_)+2)
 #define A(_VAL_) *((unsigned char*)(_VAL_)+3)
 
-CALL(7)
+CALL(8)
 
+Implemention(8) {
+
+	timeval t;
+	gettimeofday(&t, 0);
+	int64_t ts = (int64_t)t.tv_sec*1000+t.tv_usec/1000;
+	double dt = ts;
+	CCLOG("time: ts %lld, dt %f", ts, dt);
+
+	int64_t n = LLONG_MAX;
+	double m = n;
+	CCLOG("ll %lld, d %f", n, m);
+}
 
 Implemention(7) {
 
-	Sprite *sp = Sprite::create("tank.png");
-	sp->setPosition(_center);
-	addChild(sp);
-
-	GLProgram *program = GLProgram::createWithByteArrays(testshader_vert, frozen_frag);
-	sp->setGLProgram(program);
-
+	// 10000000 ~ 99999999
+	srand(time(0));
+	for (int i = 0; i < 4; i++) {
+		printf("%d:", rand() % 90000000 + 10000000);
+	}
+	printf("\n");
 }
 
 Implemention(6) {

@@ -31,6 +31,9 @@ class TestLayer1 : public Layer {
 
 public:
 
+	Interface(8);
+
+	// make teakey
 	Interface(7);
 
 	// create image with alpha from jpg and mask pair
